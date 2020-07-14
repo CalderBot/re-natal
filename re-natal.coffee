@@ -696,7 +696,7 @@ generateRequireModulesCode = (modules) ->
 
 updateIosRCTWebSocketExecutor = (iosHost) ->
   RCTWebSocketExecutorPath = "node_modules/react-native/Libraries/WebSocket/RCTWebSocketExecutor.m"
-//   edit RCTWebSocketExecutorPath, [[debugHostRx, "host] ?: @\"#{iosHost}\";"]]
+#   edit RCTWebSocketExecutorPath, [[debugHostRx, "host] ?: @\"#{iosHost}\";"]]
 
 platformOfNamespace = (ns) ->
   if ns?
