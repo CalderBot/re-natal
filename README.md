@@ -1,5 +1,9 @@
 # Re-Natal
 
+### This Fork:
+- just comment out line 699
+- this makes it work wih React-Native 62
+
 ### A utility for building ClojureScript-based React Native apps
 
 Artur Girenko
