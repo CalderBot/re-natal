@@ -696,7 +696,7 @@ generateRequireModulesCode = (modules) ->
 
 updateIosRCTWebSocketExecutor = (iosHost) ->
   RCTWebSocketExecutorPath = "node_modules/react-native/Libraries/WebSocket/RCTWebSocketExecutor.m"
-  edit RCTWebSocketExecutorPath, [[debugHostRx, "host] ?: @\"#{iosHost}\";"]]
+//   edit RCTWebSocketExecutorPath, [[debugHostRx, "host] ?: @\"#{iosHost}\";"]]
 
 platformOfNamespace = (ns) ->
   if ns?
@@ -717,14 +717,14 @@ extractRequiresFromSourceFile = (file) ->
 
 buildRequireByPlatformMap = () ->
   workdir = process.cwd()
-  onlyUserCljs = (item) -> 
+  onlyUserCljs = (item) ->
     localpath = item.path.replace workdir, ''
-    fpath.extname(localpath) == '.cljs' and localpath.indexOf('/target/') < 0 and localpath.indexOf('/re-natal/') < 0 
-  
+    fpath.extname(localpath) == '.cljs' and localpath.indexOf('/target/') < 0 and localpath.indexOf('/re-natal/') < 0
+
   files = klawSync workdir,
     nodir: true
     traverseAll: true
-    filter: onlyUserCljs  
+    filter: onlyUserCljs
   filenames = files.map((o) -> o.path)
   extractedRequires = filenames.map(extractRequiresFromSourceFile)
 
